@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100811">
+  <title>For Pyllon — November 7</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="bgMusic" src="bgm.mp3" loop preload="auto"></audio>
+  <div id="hearts" aria-hidden="true"></div>
+  <div id="confetti" aria-hidden="true"></div>
+
+  <section id="monthScreen" class="screen active">
+    <div class="month-card">
+      <p class="eyebrow">A LITTLE SURPRISE, MADE WITH LOVE</p>
+      <h1>Some days are<br><em>made of magic.</em></h1>
+      <p class="subcopy">Scroll through the months to find your day.</p>
+      <div class="month-window">
+        <div id="monthList" class="month-list"></div>
+        <div class="month-focus"></div>
+      </div>
+      <div class="date-reveal"><span>07</span><b>NOVEMBER</b></div>
+      <p id="monthCaption" class="subcopy">One very special day is waiting…</p>
+      <button id="continueBtn" class="button primary" disabled>Continue <span>↗</span></button>
+      <button id="skipBtn" class="text-button">Skip intro</button>
+    </div>
+  </section>
+
+  <section id="welcomeScreen" class="screen">
+    <div class="welcome-card">
+      <p class="eyebrow">NOVEMBER 07 · YOUR DAY</p>
+      <div class="star-seal">✦</div>
+      <h1>Happy Birthday,<br><em>Pyllon.</em></h1>
+      <p class="subcopy">
+        A little moment to celebrate a truly special friend.<br>
+        Get ready for your surprise.
+      </p>
+      <button id="startBtn" class="button primary">Reveal your surprise <span>↗</span></button>
+      <p class="signature">made especially for you ♡</p>
+    </div>
+  </section>
+
+  <section id="birthdayScreen" class="screen birthday-screen">
+    <div id="ambientMagic" class="ambient-magic" aria-hidden="true"></div>
+    <div id="lanternLayer" class="lantern-layer" aria-hidden="true"></div>
+
+    <nav class="topbar">
+      <span class="brand">Pyllon <i>♡</i></span>
+      <span class="topbar-note">A LITTLE BIRTHDAY MAGIC</span>
+      <button id="musicBtn" class="music-button">
+        ♫ <span id="musicLabel">Play music</span>
+      </button>
+    </nav>
+
+    <main class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A DAY MADE BRIGHTER BY YOU</p>
+        <h1>Happy Birthday,<br><em>Pyllon</em><span class="heart-mark">♡</span></h1>
+        <p class="hero-description">
+          A beautiful day for a beautiful soul.<br>
+          May this year bring you more joy than you can imagine.
+        </p>
+
+        <div class="gold-rule"><span>✦</span></div>
+        <p class="date-label">NOVEMBER <strong>07</strong></p>
+
+        <!-- Live birthday countdown -->
+        <div class="hero-countdown" id="heroCountdown" aria-live="polite">
+          <span class="countdown-kicker">COUNTING DOWN TO YOUR DAY</span>
+          <div class="countdown-units">
+            <div><strong id="countDays">--</strong><small>DAYS</small></div>
+            <i>:</i>
+            <div><strong id="countHours">--</strong><small>HOURS</small></div>
+            <i>:</i>
+            <div><strong id="countMinutes">--</strong><small>MINUTES</small></div>
+            <i>:</i>
+            <div><strong id="countSeconds">--</strong><small>SECONDS</small></div>
+          </div>
+        </div>
+
+        <!-- Secret letter and memory navigation -->
+        <div class="hero-actions">
+          <button id="heroLetterBtn" class="secret-letter-button" type="button">
+            <span>✉</span> A little letter for you
+          </button>
+          <button id="memoryJumpBtn" class="memory-jump-button" type="button">
+            Explore our memories ↓
+          </button>
+        </div>
+
+        <p class="scene-label" id="sceneLabel">
+          A little birthday surprise is on its way…
+        </p>
+      </div>
+
+      <div class="cinema-frame" id="cinemaFrame">
+        <div class="cinema-image"></div>
+        <div class="image-vignette"></div>
+        <div class="cinema-topline">
+          <span>FOR PYLLON</span>
+          <span>SCENE 01 · THE SURPRISE</span>
+        </div>
+        <div class="cinema-caption" id="cinemaCaption">
+          Some moments deserve to be remembered.
+        </div>
+        <div class="cinema-light light-one"></div>
+        <div class="cinema-light light-two"></div>
+      </div>
+    </main>
+
+    <!-- New memory preview strip -->
+    <section class="hero-memory-teaser" aria-label="Birthday memory preview">
+      <div class="teaser-heading">
+        <span class="eyebrow">A LITTLE TIME CAPSULE</span>
+        <span class="teaser-line"></span>
+        <span class="teaser-note">moments worth keeping ♡</span>
+      </div>
+      <div class="teaser-cards">
+        <div class="teaser-card teaser-card-one">
+          <span>✦</span>
+          <b>Little joys</b>
+          <small>the moments that make us smile</small>
+        </div>
+        <div class="teaser-card teaser-card-two">
+          <span>♡</span>
+          <b>Sweet memories</b>
+          <small>the stories we keep close</small>
+        </div>
+        <div class="teaser-card teaser-card-three">
+          <span>✧</span>
+          <b>New adventures</b>
+          <small>all the beautiful things ahead</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="wish-section">
+      <div class="wish-heading">
+        <p class="eyebrow">YOUR MOMENT</p>
+        <h2>Make a <em>wish.</em></h2>
+        <p class="subcopy">Take a breath, make your wish, and blow out the candles.</p>
+      </div>
+
+      <div class="cake-row">
+        <div class="cake-art" aria-label="Pink birthday cake with three candles">
+          <div class="cake-glow"></div>
+          <div class="cake-plate"></div>
+          <div class="cake-bottom">
+            <div class="icing-drips"></div>
+            <span>♡ &nbsp; ✦ &nbsp; ♡ &nbsp; ✦ &nbsp; ♡</span>
+          </div>
+          <div class="cake-top">
+            <div class="cake-top-oval"></div>
+            <div class="sprinkles">✦ · ✧ · ✦ · ✧</div>
+          </div>
+          <div class="candles">
+            <div class="candle"><i class="flame"></i><i class="smoke"></i></div>
+            <div class="candle"><i class="flame"></i><i class="smoke"></i></div>
+            <div class="candle"><i class="flame"></i><i class="smoke"></i></div>
+          </div>
+        </div>
+
+        <div class="wish-controls" id="wishControls">
+          <p class="eyebrow">THREE LITTLE FLAMES · ONE BIG WISH</p>
+          <p class="wish-prompt">Ready when you are.</p>
+          <button id="micBtn" class="button primary">Use microphone <span>◉</span></button>
+          <p id="micStatus" class="status">Allow microphone access, then blow gently.</p>
+          <button id="blowBtn" class="button outline">Blow out candles manually</button>
+        </div>
+
+        <div id="wishMade" class="wish-made hidden">
+          <p class="eyebrow">WISH MADE ✦</p>
+          <h3>May it all come true.</h3>
+          <p class="subcopy">Wishing you a year full of love, laughter, and lovely surprises.</p>
+          <button id="letterBtn" class="button primary">Open your birthday letter ↗</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="letterSection" class="letter-section hidden">
+      <article class="letter-card">
+        <p class="eyebrow">A NOTE FROM THE HEART</p>
+        <div class="letter-flower">✦</div>
+        <h2>Dear <em>Pyllon,</em></h2>
+        <p>Happy Birthday to one of the most special people in my life. ♡</p>
+        <p>I hope this new year brings you genuine happiness, beautiful memories, exciting opportunities, and plenty of reasons to smile.</p>
+        <p>Keep chasing your dreams, being wonderfully yourself, and remembering how much light you bring into the lives around you.</p>
+        <p>Whatever this year holds, I hope it surprises you in the best possible ways. You deserve warmth, kindness, laughter, and all the little things that make life beautiful.</p>
+        <p class="letter-highlight">Happy November 7, bestie. Here's to another year of memories, adventures, and dreams coming true. ♡</p>
+        <p class="letter-signoff">With lots of love & friendship,<br><em>Your Best Friend</em></p>
+        <button id="backBtn" class="button outline">Back to the celebration</button>
+      </article>
+    </section>
+
+    <section class="delight-section" id="delightSection">
+      <p class="eyebrow">A FEW MORE LITTLE SURPRISES</p>
+      <h2>Because you deserve <em>more magic.</em></h2>
+
+      <div class="delight-grid">
+        <article class="delight-card">
+          <p class="eyebrow">A LITTLE PRESENT</p>
+          <div class="gift-scene" id="giftScene" role="button" tabindex="0" aria-label="Open your birthday gift">
+            <span class="gift-sparkle">✦ · ✧ · ✦</span>
+            <div class="gift-box">
+              <span class="gift-ribbon"></span>
+              <span class="gift-lid"></span>
+              <span class="gift-bow">∞</span>
+            </div>
+          </div>
+          <h3>One more surprise</h3>
+          <p>Tap the gift to open it.</p>
+          <div id="giftReveal" class="gift-reveal hidden">
+            A little reminder: you make ordinary days feel special. Happy Birthday, Pyllon! ♡
+          </div>
+        </article>
+
+        <article class="delight-card">
+          <p class="eyebrow">MAKE A WISH</p>
+          <div class="wish-star">✧</div>
+          <h3>Send a wish to the stars</h3>
+          <p>Write one wish for your new year.</p>
+          <form id="secretWishForm">
+            <input id="secretWishInput" type="text" maxlength="120" placeholder="My wish for this year is…" required>
+            <button class="button primary" type="submit">Send my wish ✦</button>
+          </form>
+          <p id="secretWishResult" class="secret-result" aria-live="polite"></p>
+        </article>
+      </div>
+
+      <div class="memory-strip">
+        <p class="eyebrow">LITTLE THINGS TO REMEMBER</p>
+        <h3>May your year be filled with…</h3>
+        <div class="memory-cards">
+          <div class="memory memory-one">
+            <span>01 · JOY</span>
+            <b>Beautiful laughter</b>
+            <small>Moments that make your heart feel light.</small>
+          </div>
+          <div class="memory memory-two">
+            <span>02 · DREAMS</span>
+            <b>New adventures</b>
+            <small>Courage to chase everything you love.</small>
+          </div>
+          <div class="memory memory-three">
+            <span>03 · LOVE</span>
+            <b>People who care</b>
+            <small>Friendship, kindness and endless support.</small>
+          </div>
+        </div>
+      </div>
+
+      <section class="star-wishes" aria-labelledby="starTitle">
+        <p class="eyebrow">A LITTLE MAGIC FROM THE NIGHT SKY</p>
+        <h3 id="starTitle">Tap a <em>shooting star.</em></h3>
+        <p class="subcopy">Each star is hiding a little reminder for you.</p>
+        <div class="star-buttons">
+          <button class="shooting-star" data-message="You make ordinary moments feel extraordinary. ♡" aria-label="Reveal a birthday compliment">✦<span>JOY</span></button>
+          <button class="shooting-star" data-message="Never stop believing in the beautiful things waiting for you. ✨" aria-label="Reveal a birthday wish">✧<span>DREAMS</span></button>
+          <button class="shooting-star" data-message="You are appreciated more than words can say. 💗" aria-label="Reveal a friendship message">✦<span>FRIENDSHIP</span></button>
+        </div>
+        <p id="starMessage" class="star-message" aria-live="polite">Choose a star to reveal its message.</p>
+      </section>
+
+      <section class="photo-gallery">
+        <p class="eyebrow">YOUR LITTLE TIME CAPSULE</p>
+        <h3>Our <em>favorite memories.</em></h3>
+        <p class="subcopy">Add your own photos to turn these frames into a friendship gallery. Photos stay on this device.</p>
+        <label class="button outline upload-label" for="memoryUpload">＋ Add memory photos</label>
+        <input id="memoryUpload" class="visually-hidden" type="file" accept="image/*" multiple>
+        <div id="memoryGallery" class="photo-grid">
+          <div class="photo-placeholder"><span>♡</span><b>Memory one</b><small>Your photo will appear here</small></div>
+          <div class="photo-placeholder"><span>✦</span><b>Memory two</b><small>Add a favorite moment</small></div>
+          <div class="photo-placeholder"><span>✧</span><b>Memory three</b><small>Make this space yours</small></div>
+        </div>
+      </section>
+
+      <section class="last-surprise">
+        <p class="eyebrow">JUST WHEN YOU THOUGHT IT WAS OVER…</p>
+        <button id="lastSurpriseBtn" class="button primary">One last surprise… ✨</button>
+        <div id="lastSurpriseMessage" class="last-surprise-message hidden">
+          No matter how many birthdays pass, I hope you never forget how special you are. Keep smiling, keep shining, and keep being you. Happy Birthday, Pyllon. ♡
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer">MADE WITH LOVE FOR PYLLON <span>♡</span></footer>
+  </section>
+
+  <!-- Animated secret letter popup -->
+  <div id="heroLetterModal" class="hero-letter-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="heroLetterTitle">
+    <div class="hero-letter-backdrop" data-close-letter></div>
+    <article class="hero-letter-paper">
+      <button id="closeHeroLetter" class="hero-letter-close" type="button" aria-label="Close letter">×</button>
+      <span class="letter-stamp">♡</span>
+      <p class="eyebrow">A LITTLE NOTE, JUST FOR YOU</p>
+      <h2 id="heroLetterTitle">Dear <em>Pyllon,</em></h2>
+      <p>Some people make life feel a little brighter just by being in it. You are one of those people.</p>
+      <p>I hope your days are filled with unexpected happiness, beautiful surprises, laughter that never ends, and dreams that find their way to you.</p>
+      <p>Never forget how loved, valued, and wonderfully special you are. This little celebration is just one way of saying: the world is better with you in it. ♡</p>
+      <p class="hero-letter-sign">Happy Birthday, always.<br><em>Your best friend</em></p>
+    </article>
+  </div>
+
+  <!-- Full-screen fireworks -->
+  <div id="fireworksOverlay" class="fireworks-overlay" aria-hidden="true">
+    <canvas id="fireworksCanvas"></canvas>
+    <div id="fireworksCountdown" class="fireworks-countdown"></div>
+    <div id="fireworksMessage" class="fireworks-message">
+      <span>✦ A WISH FOR YOU ✦</span>
+      <strong>Happy Birthday, Pyllon!</strong>
+      <small>May your world always sparkle.</small>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
